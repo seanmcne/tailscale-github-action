@@ -23,7 +23,7 @@ tags is a comma-separated list of one or more [ACL Tags](https://tailscale.com/k
 for the node. At least one tag is required: an OAuth client is not associated
 with any of the Users on the tailnet, it has to Tag its nodes.
 
-args is optional and contain any CLI flags when tailscale up is executed. The 
+args optional arguments to `tailscaled` the 
 following [flags](https://tailscale.com/kb/1080/cli/#up) can be used. 
 
 Nodes created by this Action are [marked as Ephemeral](https://tailscale.com/s/ephemeral-nodes) to
