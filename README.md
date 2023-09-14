@@ -10,6 +10,7 @@ by adding a step to your workflow.
       oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
       oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
       tags: tag:ci
+      args: "--exit-node=100.1.1.1"
 ```
 
 Subsequent steps in the Action can then access nodes in your Tailnet.
@@ -21,6 +22,9 @@ for the tailnet to be accessed. We recommend storing these as
 tags is a comma-separated list of one or more [ACL Tags](https://tailscale.com/kb/1068/acl-tags/)
 for the node. At least one tag is required: an OAuth client is not associated
 with any of the Users on the tailnet, it has to Tag its nodes.
+
+args is optional and contain any CLI flags when tailscale up is executed. The 
+following [flags](https://tailscale.com/kb/1080/cli/#up) can be used. 
 
 Nodes created by this Action are [marked as Ephemeral](https://tailscale.com/s/ephemeral-nodes) to
 be automatically removed by the coordination server a short time after they
